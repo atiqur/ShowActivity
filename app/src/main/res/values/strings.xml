@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ShowActivity</string>
+    <string name="enter_text">Enter text</string>
+    <string name="next_screen">Next Screen</string>
+</resources>
