@@ -1,5 +1,6 @@
 package com.example.showactivity;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -38,5 +39,17 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == REQUEST_CODE) {
+            assert data != null;
+            String message = data.getStringExtra("message_back");
+
+            Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
+        }
     }
 }

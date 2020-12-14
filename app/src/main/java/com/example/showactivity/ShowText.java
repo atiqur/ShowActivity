@@ -27,5 +27,15 @@ public class ShowText extends AppCompatActivity {
             Log.d("NAME", "onCreate: " + extra.getString("name"));
             Log.d("AGE", "onCreate: " + extra.getInt("age"));
         }
+
+        showText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = getIntent();
+                intent.putExtra("message_back", "From second activity");
+                setResult(RESULT_OK, intent);
+                finish();
+            }
+        });
     }
 }
